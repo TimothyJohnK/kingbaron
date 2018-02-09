@@ -4,8 +4,9 @@ import bkg from './img/jazz_club_bkg.png';
 import menu from './img/menu_img.png';
 
 const Wrapper = styled.div`
-  min-height: 100vh;
+  height: 100vh;
   background: url(${bkg}) no-repeat center fixed;
+  background-size: cover;
   background-color: black;
   margin: 0;
 `;
@@ -16,6 +17,8 @@ const Header = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @media (min-width: 700px) {
+  }
 `;
 
 const Title = styled.h1`
@@ -33,40 +36,58 @@ const Title = styled.h1`
 
 const MenuButton = styled.div`
   flex: 1;
-  margin: 0.1em auto 0.2em auto;
+  margin: 0.1em auto 1em auto;
   cursor: pointer;
   background: url(${menu}) no-repeat center;
   background-size: contain;
-  height: 48px;
-  width: 56px;
+  height: 36px;
+  width: 42px;
   border-radius: 8px;
   :hover {
     background-color: rgba(255, 255, 255, 0.3);
   }
   @media (min-width: 700px) {
     position: absolute;
-    left: 1em;
-    top: 1.5em;
+    left: 2em;
+    top: 2.8em;
+    height: 48px;
+    width: 56px;
+  }
+`;
+
+const MenuContents = styled.div`
+  flex-direction: column;
+  @media (min-width: 700px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
 `;
 
 const MenuItem = styled.div`
-  font-size: 1.3em;
-  padding: 0.5em;
+  font-size: 1.4em;
+  padding: 0.3em 0.2em 0.2em 0.2em;
   background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
-  border: 2px solid white;
+  outline: 1px solid white;
+  box-sizing: border-box;
+  @media (min-width: 700px) {
+    font-size: 1.4em;
+    flex: 1;
+    margin: 0 1px;
+  }
 `;
 
 const MainContent = styled.div`
   margin-top: 1em;
-  border-radius: 16px;
   display: flex;
   justify-content: center;
   background-color: rgba(255, 255, 255, 0.8);
   padding: 1em;
   @media (min-width: 700px) {
-    margin: 1em 2em;
+    max-width: 600px;
+    margin: 1em auto;
+    border-radius: 16px;
   }
 `;
 
@@ -74,27 +95,21 @@ class Menu extends Component {
   render() {
     return (
       <div>
-        <MenuButton
-          onClick={this.props.openMenu}
-          handleMenuClick={this.props.handleMenuClick}
-        />
+        <MenuButton onClick={this.props.openMenu} />
         {this.props.open ? (
-          <MenuContents selectMenu={this.props.selectMenu} />
+          <MenuContents>
+            <MenuItem name={'bio'} /*onClick={selectMenu('bios')}*/>
+              Bio
+            </MenuItem>
+            <MenuItem name={'videos'} /*onClick={selectMenu('videos')*/>
+              Videos
+            </MenuItem>
+          </MenuContents>
         ) : null}
       </div>
     );
   }
 }
-const MenuContents = ({ selectMenu }) => (
-  <div>
-    <MenuItem name="bio" selectMenu={this.props.selectMenu('bio')}>
-      Bio
-    </MenuItem>
-    <MenuItem name="videos" selectMenu={this.props.selectMenu('videos')}>
-      Videos
-    </MenuItem>
-  </div>
-);
 
 const View = ({ pageName }) => {
   const renderContent = () => {
@@ -104,7 +119,7 @@ const View = ({ pageName }) => {
       return <Videos />;
     }
   };
-  return <div> {renderContent()}</div>;
+  return <div>{renderContent()}</div>;
 };
 
 class Bio extends Component {
@@ -129,9 +144,7 @@ export default class App extends Component {
   }
 
   openMenu() {
-    this.setState(prevState => ({
-      open: !prevState.open
-    }));
+    this.setState(prevState => ({ open: !prevState.open }));
   }
   selectMenu(name) {
     this.setState({ pageName: name });
