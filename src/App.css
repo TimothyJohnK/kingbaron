@@ -1,0 +1,13 @@
+html {
+    min-height: 100%;
+}
+
+body {
+    height: 100%;
+    background-color: black;
+}
+
+header {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-family: 'Limelight', cursive;
+}
