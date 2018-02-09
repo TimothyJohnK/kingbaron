@@ -21,10 +21,14 @@ const Header = styled.div`
 const Title = styled.h1`
   flex: 1;
   margin: 0em;
-  padding: 0.5em 0 0.1em 0;
+  padding: 16px 0;
   font-size: 3em;
   text-align: center;
   text-shadow: 1px 1px 10px rgb(167, 6, 39);
+  @media (min-width: 700px) {
+    padding: 24px 0;
+    font-size: 5em;
+  }
 `;
 
 const MenuButton = styled.div`
@@ -39,46 +43,58 @@ const MenuButton = styled.div`
   :hover {
     background-color: rgba(255, 255, 255, 0.3);
   }
+  @media (min-width: 700px) {
+    position: absolute;
+    left: 1em;
+    top: 1.5em;
+  }
+`;
+
+const MenuItem = styled.div`
+  font-size: 1.3em;
+  padding: 0.5em;
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  border: 2px solid white;
 `;
 
 const MainContent = styled.div`
+  margin-top: 1em;
+  border-radius: 16px;
   display: flex;
   justify-content: center;
   background-color: rgba(255, 255, 255, 0.8);
+  padding: 1em;
+  @media (min-width: 700px) {
+    margin: 1em 2em;
+  }
 `;
 
-const Text = styled.div`
-  padding: 1em;
-  position: relative;
-  max-width: 1000px;
-`;
 class Menu extends Component {
-  openMenu(onMenuClick) {
+  render() {
     return (
       <div>
-        <Text onMenuClick={() => onMenuClick('bio')}>Bio</Text>
-        <Text onMenuClick={() => onMenuClick('Videos')}>Videos</Text>)
+        <MenuButton
+          onClick={this.props.openMenu}
+          handleMenuClick={this.props.handleMenuClick}
+        />
+        {this.props.open ? (
+          <MenuContents selectMenu={this.props.selectMenu} />
+        ) : null}
       </div>
     );
   }
-  render() {
-    return <MenuButton onClick={this.openMenu.bind(this)} />;
-  }
 }
-class Bio extends Component {
-  render() {
-    return (
-      <Text>
-        <p>This is where the bio goes; where is it now? No one knows! </p>
-      </Text>
-    );
-  }
-}
-class Videos extends Component {
-  render() {
-    return <Text> Videos go here </Text>;
-  }
-}
+const MenuContents = ({ selectMenu }) => (
+  <div>
+    <MenuItem name="bio" selectMenu={this.props.selectMenu('bio')}>
+      Bio
+    </MenuItem>
+    <MenuItem name="videos" selectMenu={this.props.selectMenu('videos')}>
+      Videos
+    </MenuItem>
+  </div>
+);
 
 const View = ({ pageName }) => {
   const renderContent = () => {
@@ -91,23 +107,45 @@ const View = ({ pageName }) => {
   return <div> {renderContent()}</div>;
 };
 
+class Bio extends Component {
+  render() {
+    return <p>This is where the bio goes; where is it now? No one knows! </p>;
+  }
+}
+
+class Videos extends Component {
+  render() {
+    return <div> Videos go here </div>;
+  }
+}
+
 export default class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { pageName: 'bio' };
-    this.handleButton = this.handleButton.bind(this);
+    this.state = {
+      open: false,
+      pageName: 'bio'
+    };
   }
 
-  handleButton(props) {
-    this.setState({ page: props.pageName });
+  openMenu() {
+    this.setState(prevState => ({
+      open: !prevState.open
+    }));
   }
-
+  selectMenu(name) {
+    this.setState({ pageName: name });
+  }
   render() {
     return (
       <Wrapper>
         <Header>
           <Title>King Baron</Title>
-          <Menu onMenuClick={this.handleButton} />
+          <Menu
+            open={this.state.open}
+            openMenu={this.openMenu.bind(this)}
+            selectMenu={this.selectMenu.bind(this)}
+          />
         </Header>
         <MainContent>
           <View pageName={this.state.pageName} />
