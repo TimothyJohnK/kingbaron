@@ -65,6 +65,12 @@ export default class Menu extends Component {
             >
               Videos
             </MenuItem>
+            <MenuItem
+              name={'songs'}
+              onClick={() => this.props.selectMenu('songs')}
+            >
+              Songs
+            </MenuItem>
           </MenuContents>
         ) : null}
       </div>

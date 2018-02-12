@@ -4,6 +4,7 @@ import bkg from './img/jazz_club_bkg.png';
 import Menu from './components/Menu';
 import Videos from './components/Videos';
 import Bio from './components/Bio';
+import Songs from './components/Songs';
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -55,6 +56,8 @@ const View = ({ pageName }) => {
       return <Bio />;
     } else if (pageName === 'videos') {
       return <Videos />;
+    } else if (pageName === 'songs') {
+      return <Songs />;
     }
   };
   return <div>{renderContent()}</div>;
