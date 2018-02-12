@@ -71,6 +71,8 @@ const MenuItem = styled.div`
   text-align: center;
   outline: 1px solid white;
   box-sizing: border-box;
+  cursor: pointer;
+  user-select: none;
   @media (min-width: 700px) {
     font-size: 1.4em;
     flex: 1;
@@ -95,13 +97,19 @@ class Menu extends Component {
   render() {
     return (
       <div>
-        <MenuButton onClick={this.props.openMenu} />
+        <MenuButton
+          onClick={this.props.openMenu}
+          select={this.props.selectMenu}
+        />
         {this.props.open ? (
           <MenuContents>
-            <MenuItem name={'bio'} /*onClick={selectMenu('bios')}*/>
+            <MenuItem name={'bio'} onClick={() => this.props.select('bio')}>
               Bio
             </MenuItem>
-            <MenuItem name={'videos'} /*onClick={selectMenu('videos')*/>
+            <MenuItem
+              name={'videos'}
+              onClick={() => this.props.select('videos')}
+            >
               Videos
             </MenuItem>
           </MenuContents>
@@ -142,7 +150,6 @@ export default class App extends Component {
       pageName: 'bio'
     };
   }
-
   openMenu() {
     this.setState(prevState => ({ open: !prevState.open }));
   }
