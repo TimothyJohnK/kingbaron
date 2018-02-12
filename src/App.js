@@ -103,12 +103,12 @@ class Menu extends Component {
         />
         {this.props.open ? (
           <MenuContents>
-            <MenuItem name={'bio'} onClick={() => this.props.select('bio')}>
+            <MenuItem name={'bio'} onClick={() => this.props.selectMenu('bio')}>
               Bio
             </MenuItem>
             <MenuItem
               name={'videos'}
-              onClick={() => this.props.select('videos')}
+              onClick={() => this.props.selectMenu('videos')}
             >
               Videos
             </MenuItem>
