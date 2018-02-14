@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components';
 const GalleryContainer = styled.div`
   display: flex;
   flex-direction: column;
+  margin: 0.5;
 `;
 
 const IMAGE = styled.img`
