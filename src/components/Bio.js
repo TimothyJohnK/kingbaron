@@ -51,10 +51,10 @@ export default class Bio extends Component {
         </BioBody>
         <BAND>
           <h4>
-            <p>Lauren Asheim - vocals</p>
             <p>Paul Fonfara - clarinet</p>
-            <p>Josh Granowski - bass</p>
             <p>Tim Kirchhof - guitar</p>
+            <p>Lauren Asheim - vocals</p>
+            <p>Josh Granowski - bass</p>
           </h4>
         </BAND>
       </div>

@@ -89,6 +89,7 @@ export default class App extends Component {
       <Wrapper>
         <Header>
           <Title>King Baron</Title>
+
           <Menu
             open={this.state.open}
             openMenu={this.openMenu.bind(this)}
