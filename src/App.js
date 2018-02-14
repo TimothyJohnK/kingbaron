@@ -5,9 +5,12 @@ import Menu from './components/Menu';
 import Videos from './components/Videos';
 import Bio from './components/Bio';
 import Songs from './components/Songs';
+import Pictures from './components/Pictures';
+import Contact from './components/Contact';
 
 const Wrapper = styled.div`
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
   background: url(${bkg}) no-repeat center fixed;
   background-size: cover;
   background-color: black;
@@ -54,10 +57,14 @@ const View = ({ pageName }) => {
   const renderContent = () => {
     if (pageName === 'bio') {
       return <Bio />;
-    } else if (pageName === 'videos') {
-      return <Videos />;
+      // } else if (pageName === 'videos') {
+      //   return <Videos />;
     } else if (pageName === 'songs') {
       return <Songs />;
+    } else if (pageName === 'pictures') {
+      return <Pictures />;
+    } else if (pageName === 'contact') {
+      return <Contact />;
     }
   };
   return <div>{renderContent()}</div>;

@@ -60,16 +60,22 @@ export default class Menu extends Component {
               Bio
             </MenuItem>
             <MenuItem
-              name={'videos'}
-              onClick={() => this.props.selectMenu('videos')}
-            >
-              Videos
-            </MenuItem>
-            <MenuItem
               name={'songs'}
               onClick={() => this.props.selectMenu('songs')}
             >
               Songs
+            </MenuItem>
+            <MenuItem
+              name={'pictures'}
+              onClick={() => this.props.selectMenu('pictures')}
+            >
+              Pictures
+            </MenuItem>
+            <MenuItem
+              name={'contact'}
+              onClick={() => this.props.selectMenu('contact')}
+            >
+              Contact
             </MenuItem>
           </MenuContents>
         ) : null}
@@ -77,3 +83,10 @@ export default class Menu extends Component {
     );
   }
 }
+
+// <MenuItem
+// name={'videos'}
+// onClick={() => this.props.selectMenu('videos')}
+// >
+// Videos
+// </MenuItem>
