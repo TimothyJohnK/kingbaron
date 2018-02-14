@@ -25,18 +25,17 @@ export default class Bio extends Component {
         <Header3>
           <i>
             "Traditional jazz, American music, and early 20th century tunes
-            played with verve, emotion, and inventive prowess."
+            played with verve and inventive prowess."
           </i>
         </Header3>
         <BioBody>
           <p>
             After a hardscrabble childhood on the streets of Musictown a young
             King Baron, full of hokum and how-do-you-do, found their way to
-            Minneapolis. King Baron decided to play those tunes that none of the
-            other bands play. Quality tunes that would make even the most down
-            and out feel like doing a tranky doo or shimmy into shim sham. King
-            Baron loved that rhythm sweet and hot. Those up-tempos numbers will
-            always have a piece of their heart. They also know the contemplative
+            Minneapolis. King Baron plays those tunes that none of the other
+            bands play. Quality tunes that would make even the most down and out
+            feel like doing a tranky doo or shimmy into shim sham. King Baron
+            loves that rhythm sweet and hot. They also know the contemplative
             and wistful tones that will strum the heart strings and tickle the
             fancy of even the most carefree Tom, Dick, or Sally. King Baron
             plays the songs you've been wanting to hear and may have never
