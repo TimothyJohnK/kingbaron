@@ -96,7 +96,6 @@ export default class App extends Component {
         <MainContent>
           <View pageName={this.state.pageName} />
         </MainContent>
-        <div> BIG OL THING HERE </div>
       </Wrapper>
     );
   }
