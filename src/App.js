@@ -45,6 +45,7 @@ const MainContent = styled.div`
   justify-content: center;
   background-color: rgba(255, 255, 255, 0.8);
   padding: 1em;
+  font-size: 1.2em;
   @media (min-width: 700px) {
     max-width: 600px;
     margin: 1em auto;
