@@ -7,6 +7,8 @@ const SongListTitle = styled.div`
 `;
 const SongList = styled.ul`
   list-style: none;
+  text-indent: -0.6em;
+  column-gap: 2em;
   @media (min-width: 700px) {
     columns: 2;
   }
