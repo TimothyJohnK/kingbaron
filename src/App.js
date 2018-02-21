@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import bkg from './img/jazz_club_bkg.png';
 import Menu from './components/Menu';
-import Videos from './components/Videos';
 import Bio from './components/Bio';
 import Songs from './components/Songs';
 import Pictures from './components/Pictures';
@@ -57,8 +56,6 @@ const View = ({ pageName }) => {
   const renderContent = () => {
     if (pageName === 'bio') {
       return <Bio />;
-      // } else if (pageName === 'videos') {
-      //   return <Videos />;
     } else if (pageName === 'songs') {
       return <Songs />;
     } else if (pageName === 'pictures') {
