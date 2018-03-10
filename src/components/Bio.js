@@ -54,7 +54,7 @@ export default class Bio extends Component {
             <p>Paul Fonfara - clarinet</p>
             <p>Tim Kirchhof - guitar</p>
             <p>Lauren Asheim - vocals</p>
-            <p>Josh Granowski - bass</p>
+            <p>Evan Clark - tuba</p>
           </h4>
         </BAND>
       </div>
