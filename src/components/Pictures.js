@@ -20,7 +20,7 @@ export default class Pictures extends Component {
       <GalleryContainer>
         <IMAGE src={require('../img/tim_with_title.png')} />
         <IMAGE src={require('../img/paul_shred.png')} />
-        <IMAGE src={require('../img/lauren_singing.jpg')} width="100%" />
+        <IMAGE src={require('../img/struve_suit.jpg')} />
         <IMAGE src={require('../img/tim_sing.png')} />
         <IMAGE src={require('../img/cartmusic.jpg')} />
       </GalleryContainer>

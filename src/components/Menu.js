@@ -83,10 +83,3 @@ export default class Menu extends Component {
     );
   }
 }
-
-// <MenuItem
-// name={'videos'}
-// onClick={() => this.props.selectMenu('videos')}
-// >
-// Videos
-// </MenuItem>

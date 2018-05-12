@@ -51,10 +51,9 @@ export default class Bio extends Component {
         </BioBody>
         <BAND>
           <h4>
-            <p>Paul Fonfara - clarinet</p>
-            <p>Tim Kirchhof - guitar</p>
-            <p>Lauren Asheim - vocals</p>
-            <p>Evan Clark - tuba</p>
+            <p>Paul Fonfara - clarinet, bass clarinet, whistling, vocals</p>
+            <p>Tim Kirchhof - guitar, melodica, vocals</p>
+            <p>Eric Struve - bass</p>
           </h4>
         </BAND>
       </div>
