@@ -53,7 +53,7 @@ export default class Bio extends Component {
           <h4>
             <p>Paul Fonfara - clarinet, bass clarinet, whistling, vocals</p>
             <p>Tim Kirchhof - guitar, melodica, vocals</p>
-            <p>Eric Struve - bass</p>
+            <p>Eric Struve - bass, thundertub</p>
           </h4>
         </BAND>
       </div>

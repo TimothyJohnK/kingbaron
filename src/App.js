@@ -6,6 +6,8 @@ import Bio from './components/Bio';
 import Songs from './components/Songs';
 import Pictures from './components/Pictures';
 import Contact from './components/Contact';
+import Music from './components/Music';
+
 
 const Wrapper = styled.div`
   height: 100%;
@@ -63,6 +65,8 @@ const View = ({ pageName }) => {
       return <Pictures />;
     } else if (pageName === 'contact') {
       return <Contact />;
+    } else if (pageName === 'music') {
+      return <Music />;
     }
   };
   return <div>{renderContent()}</div>;
