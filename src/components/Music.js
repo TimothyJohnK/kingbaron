@@ -16,6 +16,7 @@ const Audio = styled.div`
   grid-row-start: 2;
   grid-row-end: 2;
   cursor: pointer;
+  margin: 0 auto;
 `;
 const SongList = styled.div`
   grid-row-start: 4;
@@ -58,16 +59,25 @@ const SongLength = styled.span`
 
 const songRepo = [
   {
-    title: 'Ginkgo',
-    songLength: '1:43',
-    path: require('../recordings/Ginkgo.mp3')
+    title: 'Tchavolo Swing',
+    songLength: '2:03',
+    path: require('../recordings/tchavolo_swing.mp3')
   },
   {
-    title: 'Bulgar From Odessa',
-    songLength: '1:04',
-    path: require('../recordings/Bulgar from Odessa.mp3')
+    title: 'Louisiana Fairytale',
+    songLength: '3:34',
+    path: require('../recordings/lousiana_fairytale.mp3')
+  },
+  {
+    title: 'I Got It Bad (and that ain\'t good)',
+    songLength: '2:04',
+    path: require('../recordings/i_got_it_bad.mp3')
+  },
+  {
+    title: 'It\'s Only a Paper Moon',
+    songLength: '3:05',
+    path: require('../recordings/paper_moon.mp3')
   }
- 
 ];
 
 export default class MusicPlayer extends Component {
