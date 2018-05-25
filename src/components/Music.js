@@ -59,11 +59,6 @@ const SongLength = styled.span`
 
 const songRepo = [
   {
-    title: 'Tchavolo Swing',
-    songLength: '2:03',
-    path: require('../recordings/tchavolo_swing.mp3')
-  },
-  {
     title: 'Louisiana Fairytale',
     songLength: '3:34',
     path: require('../recordings/lousiana_fairytale.mp3')
@@ -72,6 +67,11 @@ const songRepo = [
     title: 'I Got It Bad (and that ain\'t good)',
     songLength: '2:04',
     path: require('../recordings/i_got_it_bad.mp3')
+  },
+  {
+    title: 'Tchavolo Swing',
+    songLength: '2:03',
+    path: require('../recordings/tchavolo_swing.mp3')
   },
   {
     title: 'It\'s Only a Paper Moon',
