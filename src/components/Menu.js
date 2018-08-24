@@ -60,16 +60,10 @@ export default class Menu extends Component {
               Bio
             </MenuItem>
             <MenuItem
-              name={'songs'}
-              onClick={() => this.props.selectMenu('songs')}
-            >
-              Songs
-            </MenuItem>
-            <MenuItem
               name={'music'}
               onClick={() => this.props.selectMenu('music')}
             >
-            Music
+              Music
             </MenuItem>
             <MenuItem
               name={'pictures'}
