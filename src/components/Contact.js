@@ -19,7 +19,7 @@ export default class Contact extends Component {
     return (
       <ContactWrapper>
         <div>Booking:</div>
-        <Email href="mailto: timkirchhofmusic@gmail.com">
+        <Email href="mailto: kingbaronbooking@gmail.com">
           click here to email King Baron
         </Email>
       </ContactWrapper>
