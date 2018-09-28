@@ -19,6 +19,7 @@ export default class Pictures extends Component {
     return (
       <GalleryContainer>
         <IMAGE src={require('../img/tim_with_title.png')} />
+        <IMAGE src={require('../img/KB_at_BFM_smiley_struve.jpg')} />
         <IMAGE src={require('../img/happy_tim.png')} />
         <IMAGE src={require('../img/table_paul.jpg')} />
         <IMAGE src={require('../img/struve_suit.jpg')} />

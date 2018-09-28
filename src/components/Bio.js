@@ -35,7 +35,10 @@ export default class Bio extends Component {
             doing a tranky doo or shimmy into shim sham. King Baron loves that
             rhythm sweet and hot as well as the contemplative and wistful tones
             of a beautiful ballad. King Baron plays the songs you've been
-            wanting to hear.
+            wanting to hear. King Baron performs primarily as a trio. We add
+            members as needed to get the right sound for the gig. So it's not
+            rare to hear us with drums or vocals. We love to play weddings,
+            private parties, and celebrations of all sorts.
           </p>
           <p>
             As a group King Baron have performed throughout Minneapolis, St.
