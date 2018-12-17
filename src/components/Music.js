@@ -10,7 +10,7 @@ const MainSongTitle = styled.div`
   grid-row-start: 1;
   text-align: center;
   font-size: 1.3em;
-  padding-bottom: .8em;
+  padding-bottom: 0.8em;
 `;
 const Audio = styled.div`
   grid-row-start: 2;
@@ -34,49 +34,57 @@ const PlayerButtons = styled.div`
   cursor: pointer;
 `;
 const PrevButton = styled.span`
-  flex: 1;`;
-const NextButton = styled.span` 
   flex: 1;
-  text-align: right`;
+`;
+const NextButton = styled.span`
+  flex: 1;
+  text-align: right;
+`;
 
 const ListItem = styled.div`
   display: flex;
   cursor: pointer;
-  background-color: ${props => (props.track % 2 === 0 ? 'rgba(255,255,255,.5)' : '')};
-  padding: .2em;
-  `;
+  background-color: ${props =>
+    props.track % 2 === 0 ? 'rgba(255,255,255,.5)' : ''};
+  padding: 0.2em;
+`;
 const SongNumber = styled.span`
   text-align: left;
-  `;
+`;
 const SongTitle = styled.span`
-  padding: 0 .5em 0 1em;
+  padding: 0 0.5em 0 1em;
   flex: 1;
   text-align: left;
-  `;
+`;
 const SongLength = styled.span`
   text-align: right;
-  `;
+`;
 
 const songRepo = [
+  {
+    title: 'Oh, Lady Be Good!',
+    songLength: '3:05',
+    path: require('../recordings/lady_be_good.mp3')
+  },
+  {
+    title: 'Swing Gitane',
+    songLength: '2:33',
+    path: require('../recordings/swing_gitane.mp3')
+  },
   {
     title: 'Louisiana Fairytale',
     songLength: '3:34',
     path: require('../recordings/lousiana_fairytale.mp3')
   },
   {
-    title: 'I Got It Bad (and that ain\'t good)',
-    songLength: '2:04',
-    path: require('../recordings/i_got_it_bad.mp3')
+    title: 'Douce Ambiance',
+    songLength: '3:22',
+    path: require('../recordings/douce_ambiance.mp3')
   },
   {
-    title: 'Tchavolo Swing',
-    songLength: '2:03',
-    path: require('../recordings/tchavolo_swing.mp3')
-  },
-  {
-    title: 'It\'s Only a Paper Moon',
-    songLength: '3:05',
-    path: require('../recordings/paper_moon.mp3')
+    title: 'Good Bait',
+    songLength: '2:30',
+    path: require('../recordings/good_bait.mp3')
   }
 ];
 
@@ -119,33 +127,21 @@ export default class MusicPlayer extends Component {
   render() {
     return (
       <Player>
-        <MainSongTitle>
-          {songRepo[this.state.count].title}
-        </MainSongTitle>
+        <MainSongTitle>{songRepo[this.state.count].title}</MainSongTitle>
         <Audio>
-          <audio
-            className="waveform"
-            preload="auto"
-            controls
-            ref="waveform"
-          >
-            <source
-              src={songRepo[this.state.count].path}
-              type="audio/mp3"
-            />
+          <audio className="waveform" preload="auto" controls ref="waveform">
+            <source src={songRepo[this.state.count].path} type="audio/mp3" />
           </audio>
         </Audio>
         <PlayerButtons>
           <PrevButton onClick={this.playerClick.bind(this, 'prev_song')}>
-                      &lsaquo;&lsaquo;
+            &lsaquo;&lsaquo;
           </PrevButton>
           <NextButton onClick={this.playerClick.bind(this, 'next_song')}>
-                      &rsaquo;&rsaquo;
+            &rsaquo;&rsaquo;
           </NextButton>
         </PlayerButtons>
-        <SongList>
-          {this.songBuilder()}
-        </SongList>
+        <SongList>{this.songBuilder()}</SongList>
       </Player>
     );
   }
